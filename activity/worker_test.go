@@ -257,6 +257,9 @@ func TestTypedActivityWorker(t *testing.T) {
 	config := &aws.Config{
 		Credentials: credentials.NewEnvCredentials(),
 		Region:      "us-east-1",
+		LogHTTPBody: true,
+		LogLevel: 100,
+		DisableParamValidation: true,
 	}
 
 	client := swf.New(config)
@@ -343,7 +346,7 @@ func TestTypedActivityWorker(t *testing.T) {
 
 	_, err := client.StartWorkflowExecution(&swf.StartWorkflowExecutionInput{
 		Domain:       S(domain),
-		WorkflowID:   S("worker-test"),
+		WorkflowID:   S("worker-test12"),
 		WorkflowType: &swf.WorkflowType{Name: S(workflow), Version: S(version)},
 		Input:        S("{}"),
 		ExecutionStartToCloseTimeout: S("90"),
