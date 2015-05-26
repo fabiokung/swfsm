@@ -255,10 +255,10 @@ func TestTypedActivityWorker(t *testing.T) {
 	}
 
 	config := &aws.Config{
-		Credentials: credentials.NewEnvCredentials(),
-		Region:      "us-east-1",
-		LogHTTPBody: true,
-		LogLevel: 100,
+		Credentials:            credentials.NewEnvCredentials(),
+		Region:                 "us-east-1",
+		LogHTTPBody:            true,
+		LogLevel:               100,
 		DisableParamValidation: true,
 	}
 
