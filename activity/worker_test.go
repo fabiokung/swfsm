@@ -346,7 +346,7 @@ func TestTypedActivityWorker(t *testing.T) {
 
 	_, err := client.StartWorkflowExecution(&swf.StartWorkflowExecutionInput{
 		Domain:       S(domain),
-		WorkflowID:   S("worker-test12"),
+		WorkflowID:   S("worker-test"),
 		WorkflowType: &swf.WorkflowType{Name: S(workflow), Version: S(version)},
 		Input:        S("{}"),
 		ExecutionStartToCloseTimeout: S("90"),
